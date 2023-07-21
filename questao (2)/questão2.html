@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body onload="rodar()">
+
+    <script>
+        function rodar() {
+            const arrayA = [];
+            const arrayM = [];
+
+            function lerA() {
+                for (let i = 0; i < 10; i++) {
+                    const numero = parseFloat(prompt(`Digite o número ${i + 1}:`));
+                    arrayA.push(numero);
+                }
+            }
+
+            function calcularM() {
+                const x = parseFloat(prompt('Digite o valor de X:'));
+
+                for (let i = 0; i < arrayA.length; i++) {
+                    const resultado = arrayA[i] * x;
+                    arrayM.push(resultado);
+                }
+            }
+
+            function mostrarM() {
+                const resultadoDiv = document.createElement('div');
+                resultadoDiv.innerHTML = 'Array M: ' + arrayM.join(', ');
+                document.body.appendChild(resultadoDiv);
+            }
+
+            lerA();
+            calcularM();
+            mostrarM();
+        }
+    </script>
+</body>
+</html>

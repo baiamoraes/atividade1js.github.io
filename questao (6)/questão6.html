@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    function calcularCategoriaNadador(idade) {
+      if (idade < 8) {
+        return 'Infantil';
+      } else if (idade < 12) {
+        return 'Juvenil';
+      } else {
+        return 'Jovem';
+      }
+    }
+
+    const idadeNadador = prompt('Digite a idade do nadador:');
+
+    const idadeNumerica = parseInt(idadeNadador);
+
+    const categoria = calcularCategoriaNadador(idadeNumerica);
+
+    document.write(`A categoria é: ${categoria}`);
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function calcularIdade() {
+            const anoNascimento = parseInt(prompt("informe o ano de nascimento:"));
+            const anoAtual = parseInt(prompt("infomre o ano atual:"));
+
+            if (isNaN(anoNascimento) || isNaN(anoAtual)) {
+                console.log("pare de gracinha!");
+            } else {
+                const idade = anoAtual - anoNascimento;
+                document.body.innerHTML = `<h1>A idade da pessoa é ${idade} anos.</h1>`;
+            }
+        }
+
+        calcularIdade();
+    </script>
+</body>
+</html>

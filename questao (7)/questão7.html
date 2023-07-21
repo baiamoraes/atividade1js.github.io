@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    function converterMoeda(valorReal, tipoMoeda) {
+      let taxaConversao = 0;
+
+      if (tipoMoeda === 'd') {
+        taxaConversao = 5.50;
+      } else if (tipoMoeda === 'e') {
+        taxaConversao = 7.00;
+      } else {
+        console.log('Tipo de moeda inválido.');
+        return;
+      }
+
+      const valorConvertido = valorReal / taxaConversao;
+      console.log(`Valor convertido: ${valorConvertido.toFixed(2)} ${tipoMoeda === 'd' ? 'Dólar' : 'Euro'}`);
+      document.write(`Valor convertido: ${valorConvertido.toFixed(2)} ${tipoMoeda === 'd' ? 'Dólar' : 'Euro'}`);
+    }
+
+    const valorEmReais = parseFloat(prompt('Digite o valor em reais:'));
+    const tipoMoeda = prompt('Digite "d" para converter para Dólar ou "e" para converter para Euro:');
+
+    converterMoeda(valorEmReais, tipoMoeda);
+  </script>
+</body>
+</html>

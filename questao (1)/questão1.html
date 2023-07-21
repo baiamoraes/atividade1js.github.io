@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        const nomesAlunos = [];
+        const notasAlunos = [];
+        function lerNomesENotas() {
+            for (let i = 0; i < 5; i++) {
+                const nome = prompt(`Digite o nome do aluno ${i + 1}:`);
+                nomesAlunos.push(nome);
+                const nota = parseFloat(prompt(`Digite a nota do aluno ${i + 1}:`));
+                notasAlunos.push(nota);
+            }
+        }
+
+        function exibirNomesENotas() {
+            let somaNotas = 0;
+
+            for (let i = 0; i < nomesAlunos.length; i++) {
+                document.write(`Aluno ${i + 1}: ${nomesAlunos[i]} - Nota: ${notasAlunos[i]}<br>`);
+                somaNotas += notasAlunos[i];
+            }
+
+            const mediaTotal = somaNotas / nomesAlunos.length;
+            document.write(`Média total das notas: ${mediaTotal.toFixed(2)}`);
+        }
+        lerNomesENotas();
+        exibirNomesENotas();
+    </script>
+</body>
+</html>

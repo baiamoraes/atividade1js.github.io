@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    function verificarEmprestimo(renda, valorParcela) {
+      const limiteComprometimento = 0.3;
+      const valorComprometido = valorParcela / renda;
+      
+      if (valorComprometido <= limiteComprometimento) {
+        return "EMPRÉSTIMO APROVADO";
+      } else {
+        return "EMPRÉSTIMO NÃO APROVADO";
+      }
+    }
+
+    const rendaCliente = parseFloat(prompt("Digite o valor da renda do cliente:"));
+    const valorParcela = parseFloat(prompt("Digite o valor da parcela do empréstimo:"));
+
+    const resultado = verificarEmprestimo(rendaCliente, valorParcela);
+    document.write(resultado);
+  </script>
+</body>
+</html>

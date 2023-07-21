@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    const clientes = [];
+
+    do {
+      const nome = prompt('Digite o nome do cliente (ou "Fim" para sair):');
+      if (nome.toLowerCase() === 'fim') break;
+
+      const idade = parseInt(prompt('Digite a idade do cliente:'));
+
+      clientes.push({ nome, idade });
+    } while (true);
+
+    const preferencial = clientes.filter(cliente => cliente.idade >= 60);
+    const filaNormal = clientes.filter(cliente => cliente.idade < 60);
+
+    document.write('<h2>Clientes com preferncia:</h2>');
+    document.write('<ul>');
+    preferencial.forEach(cliente => {
+      document.write(`<li>Nome: ${cliente.nome}, Idade: ${cliente.idade}</li>`);
+    });
+    document.write('</ul>');
+
+    document.write('<h2>Clientes da fila normal:</h2>');
+    document.write('<ul>');
+    filaNormal.forEach(cliente => {
+      document.write(`<li>Nome: ${cliente.nome}, Idade: ${cliente.idade}</li>`);
+    });
+    document.write('</ul>');
+  </script>
+</body>
+</html>
